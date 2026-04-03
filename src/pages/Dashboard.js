@@ -190,16 +190,19 @@ function Dashboard() {
 }
 
 const styles = {
-  container: { minHeight: '100vh', backgroundColor: '#f0f4ff' },
+  container: {
+    minHeight: '100vh',
+    backgroundColor: '#f0f4ff',
+  },
   navbar: {
     backgroundColor: '#4f46e5',
     padding: '16px 24px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    logoImg: {
-  height: '40px',
-},
+  },
+  logoImg: {
+    height: '30px',
   },
   logo: { color: 'white', margin: 0, fontSize: '20px' },
   navKati: { display: 'flex', gap: '8px' },
