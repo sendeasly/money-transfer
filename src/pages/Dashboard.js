@@ -69,7 +69,7 @@ function Dashboard() {
   return (
     <div style={styles.container}>
       <div style={styles.navbar}>
-        <h2 style={styles.logo}>SendEasly</h2>
+        <img src="/logo.png" alt="SendEasly" style={styles.logoImg} />
         <div style={styles.navKati}>
           <button
             style={ukurasa === 'tuma' ? styles.navAmilifu : styles.navKitufe}
@@ -197,6 +197,9 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    logoImg: {
+  height: '40px',
+},
   },
   logo: { color: 'white', margin: 0, fontSize: '20px' },
   navKati: { display: 'flex', gap: '8px' },

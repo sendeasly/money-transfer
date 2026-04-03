@@ -4,7 +4,7 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.kadi}>
-        <h1 style={styles.kichwa}>💸 Tuma Pesa Kimataifa</h1>
+        <img src="/logo.png" alt="SendEasly" style={styles.logo} />
         <p style={styles.maelezo}>
           Tuma pesa haraka, salama, na kwa bei nafuu duniani kote
         </p>
@@ -39,6 +39,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20px',
+    logo: {
+  width: '200px',
+  marginBottom: '20px',
+},
   },
   kadi: {
     backgroundColor: 'white',
