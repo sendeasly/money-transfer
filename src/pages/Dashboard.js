@@ -203,7 +203,6 @@ const styles = {
   },
   logoImg: {
   height: '100px',
-  mixBlendMode: 'screen',
 },
   logo: { color: 'white', margin: 0, fontSize: '20px' },
   navKati: { display: 'flex', gap: '8px' },
