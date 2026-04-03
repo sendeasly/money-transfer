@@ -34,9 +34,10 @@ function Login() {
       const data = await jibu.json();
 
       if (jibu.ok) {
-        setMafanikio('Karibu ' + data.mtumiaji.jina + '! Umeingia!');
-        localStorage.setItem('mtumiaji', JSON.stringify(data.mtumiaji));
-      } else {
+  setMafanikio('Karibu ' + data.mtumiaji.jina + '! Umeingia!');
+  localStorage.setItem('mtumiaji', JSON.stringify(data.mtumiaji));
+  window.location.href = '/dashboard';
+} else {
         setKosa(data.kosa);
       }
     } catch (e) {
