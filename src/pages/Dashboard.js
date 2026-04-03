@@ -38,7 +38,7 @@ function Dashboard() {
     setMatokeo({ ada, jumla, mpokeaji });
   }
 
-  function tumaPesa() {
+  function SendEasly() {
     if (!matokeo) return;
     const muamala = {
       id: historia.length + 1,
@@ -69,7 +69,7 @@ function Dashboard() {
   return (
     <div style={styles.container}>
       <div style={styles.navbar}>
-        <h2 style={styles.logo}>TumaPesa</h2>
+        <h2 style={styles.logo}>SendEasly</h2>
         <div style={styles.navKati}>
           <button
             style={ukurasa === 'tuma' ? styles.navAmilifu : styles.navKitufe}
@@ -156,7 +156,7 @@ function Dashboard() {
                 <span>Mpokeaji apata:</span>
                 <strong>{matokeo.mpokeaji} {kwenda}</strong>
               </div>
-              <button style={styles.kitufeKijani} onClick={tumaPesa}>
+              <button style={styles.kitufeKijani} onClick={SendEasly}>
                 Tuma Sasa
               </button>
             </div>
