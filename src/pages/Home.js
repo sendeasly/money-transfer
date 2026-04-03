@@ -40,8 +40,8 @@ const styles = {
     justifyContent: 'center',
     padding: '20px',
     logo: {
-  width: '200px',
-  marginBottom: '20px',
+  width: '150px',
+  marginBottom: '16px',
 },
   },
   kadi: {
