@@ -202,9 +202,9 @@ const styles = {
     justifyContent: 'space-between',
   },
   logoImg: {
-    height: '80px',
-    mixBlendMode: 'screen',
-  },
+  height: '30px',
+  mixBlendMode: 'screen',
+},
   logo: { color: 'white', margin: 0, fontSize: '20px' },
   navKati: { display: 'flex', gap: '8px' },
   navKitufe: {
