@@ -39,10 +39,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20px',
-    logo: {
-  width: '80px',
-  marginBottom: '12px',
-},
+  },
+  logo: {
+    width: '80px',
+    marginBottom: '12px',
   },
   kadi: {
     backgroundColor: 'white',
