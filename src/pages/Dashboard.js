@@ -202,7 +202,7 @@ const styles = {
     justifyContent: 'space-between',
   },
   logoImg: {
-  height: '30px',
+  height: '100px',
   mixBlendMode: 'screen',
 },
   logo: { color: 'white', margin: 0, fontSize: '20px' },
