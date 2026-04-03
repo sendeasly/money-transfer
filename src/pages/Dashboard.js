@@ -202,7 +202,7 @@ const styles = {
     justifyContent: 'space-between',
   },
   logoImg: {
-    height: '30px',
+    height: '80px',
   },
   logo: { color: 'white', margin: 0, fontSize: '20px' },
   navKati: { display: 'flex', gap: '8px' },
