@@ -8,10 +8,15 @@ function Home() {
         <p style={styles.maelezo}>
           Tuma pesa haraka, salama, na kwa bei nafuu duniani kote
         </p>
-        <div style={styles.vitufe}>
-          <a href="/login" style={styles.kitufeIngia}>Ingia</a>
-          <a href="/register" style={styles.kitufeSajili}>Sajili Sasa</a>
-        </div>
+        <div style={styles.navLinks}>
+  <a href="/join" style={styles.navLink}>Join our team</a>
+  <a href="/faqs" style={styles.navLink}>FAQs</a>
+  <a href="/security" style={styles.navLink}>Security</a>
+  <a href="/contact" style={styles.navLink}>Contact us</a>
+  <a href="/about" style={styles.navLink}>About us</a>
+  <a href="/language" style={styles.navLink}>Language</a>
+  <a href="/login" style={styles.navKitufe}>Login</a>
+</div>
         <div style={styles.takwimu}>
           <div style={styles.takwimuMoja}>
             <h2 style={styles.nambari}>150+</h2>
