@@ -195,7 +195,7 @@ const styles = {
     backgroundColor: '#f0f4ff',
   },
   navbar: {
-    backgroundColor: '#4f46e5',
+    backgroundColor: '#90EE90',
     padding: '16px 24px',
     display: 'flex',
     alignItems: 'center',
