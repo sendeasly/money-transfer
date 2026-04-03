@@ -25,7 +25,7 @@ function Login() {
     setInapakia(true);
 
     try {
-      const jibu = await fetch('http://localhost:5000/ingia', {
+      const jibu = await fetch('https://money-transfer-backend-production.up.railway.app/ingia', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, nywila }),

@@ -31,7 +31,7 @@ function Register() {
     setInapakia(true);
 
     try {
-      const jibu = await fetch('http://localhost:5000/sajili', {
+      const jibu = await fetch('http://https://money-transfer-backend-production.up.railway.app/sajili', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ jina, email, nywila }),
