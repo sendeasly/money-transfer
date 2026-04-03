@@ -41,8 +41,8 @@ const styles = {
     padding: '20px',
   },
   logo: {
-    width: '80px',
-    marginBottom: '12px',
+    width: '150px',
+    marginBottom: '16px',
   },
   kadi: {
     backgroundColor: 'white',
