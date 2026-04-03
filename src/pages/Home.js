@@ -23,24 +23,24 @@ function Home() {
         <div style={styles.kadi}>
           <h1 style={styles.kichwa}>💸 SendEasly</h1>
           <p style={styles.maelezo}>
-            Tuma pesa haraka, salama, na kwa bei nafuu duniani kote
+            Send money fast, safe, and affordable worldwide
           </p>
           <div style={styles.vitufe}>
-            <a href="/login" style={styles.kitufeIngia}>Ingia</a>
-            <a href="/register" style={styles.kitufeSajili}>Sajili Sasa</a>
+            <a href="/login" style={styles.kitufeLogin}>Login</a>
+            <a href="/register" style={styles.kitufeSajili}>Get Started</a>
           </div>
           <div style={styles.takwimu}>
             <div style={styles.takwimuMoja}>
               <h2 style={styles.nambari}>150+</h2>
-              <p style={styles.maelezoTakwimu}>Nchi</p>
+              <p style={styles.maelezoTakwimu}>Countries</p>
             </div>
             <div style={styles.takwimuMoja}>
               <h2 style={styles.nambari}>2%</h2>
-              <p style={styles.maelezoTakwimu}>Ada tu</p>
+              <p style={styles.maelezoTakwimu}>Fee only</p>
             </div>
             <div style={styles.takwimuMoja}>
               <h2 style={styles.nambari}>24/7</h2>
-              <p style={styles.maelezoTakwimu}>Huduma</p>
+              <p style={styles.maelezoTakwimu}>Support</p>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ const styles = {
     zIndex: 1000,
   },
   navLogo: {
-    height: '40px',
+    height: '100px',
   },
   navLinks: {
     display: 'flex',
@@ -123,7 +123,7 @@ const styles = {
     justifyContent: 'center',
     marginBottom: '40px',
   },
-  kitufeIngia: {
+  kitufeLogin: {
     backgroundColor: '#4f46e5',
     color: 'white',
     padding: '12px 32px',
