@@ -37,13 +37,13 @@ function Home() {
 }
 
 const styles = {
-  container: {
+ container: {
     minHeight: '100vh',
     backgroundColor: '#f0f4ff',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '20px',
+    padding: '100px 20px 20px',
   },
   logo: {
     width: '150px',
