@@ -55,14 +55,14 @@ function Home() {
             money wallets anytime.
           </p>
           <div style={styles.storeVitufe}>
-            <a href="#" style={styles.storeKitufe}>
+            <a href="/download" style={styles.storeKitufe}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Google Play"
                 style={styles.storeImg}
               />
             </a>
-            <a href="#" style={styles.storeKitufe}>
+            <a href="/download" style={styles.storeKitufe}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                 alt="App Store"
