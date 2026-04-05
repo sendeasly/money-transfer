@@ -68,7 +68,7 @@ function Home() {
 
         {/* Maandishi */}
         <div style={styles.maandishi}>
-          <h1 style={styles.kichwa}>Send more,<br />spend less.</h1>
+          <h1 style={styles.kichwa}>Send easly,<br />spend less.</h1>
           <p style={styles.maelezo}>
             Send money from the UK, EU, US, UAE, Canada and
             Australia to Africa at a great rate.
