@@ -239,7 +239,7 @@ const styles = {
   },
   hero: {
     display: 'flex',
-    flexDirection: isMobile ? 'column-reverse' : 'row',
+    flexDirection: isMobile ? 'column' : 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: isMobile ? '100px 20px 40px' : '140px 60px 60px',
