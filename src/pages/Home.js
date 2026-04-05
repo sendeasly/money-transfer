@@ -141,9 +141,9 @@ function Home() {
             Today's rate: 1 {kutoka} = {kiwango} {kwenda}
           </p>
 
-          <a href="/register" style={styles.sendKitufe}>
-            Get Started →
-          </a>
+          <a href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15" style={styles.sendKitufe} target="_blank" rel="noreferrer">
+  Get Started →
+</a>
         </div>
 
       </div>
