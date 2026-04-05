@@ -55,11 +55,10 @@ function Home() {
       {/* Mobile Menu */}
       {menuWazi && (
         <div style={styles.mobileMenu}>
-          <a href="/join" style={styles.mobileMenuLink}>Join our team</a>
+          <a href="/about" style={styles.mobileMenuLink}>About us</a>
           <a href="/faqs" style={styles.mobileMenuLink}>FAQs</a>
           <a href="/security" style={styles.mobileMenuLink}>Security</a>
           <a href="/contact" style={styles.mobileMenuLink}>Contact us</a>
-          <a href="/about" style={styles.mobileMenuLink}>About us</a>
           <a href="/language" style={styles.mobileMenuLink}>Language</a>
         </div>
       )}
@@ -72,8 +71,7 @@ function Home() {
           <h1 style={styles.kichwa}>Send more,<br />spend less.</h1>
           <p style={styles.maelezo}>
             Send money from the UK, EU, US, UAE, Canada and
-            Australia to Africa, Asia, the Caribbean and Latin
-            America at a great rate.
+            Australia to Africa at a great rate.
           </p>
           <div style={styles.storeVitufe}>
             <a href="/download" style={styles.storeKitufe}>
@@ -187,7 +185,7 @@ const styles = {
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#f48fb1',
+    backgroundColor: '#fea9c6',
     padding: '12px 20px',
     display: 'flex',
     alignItems: 'center',
