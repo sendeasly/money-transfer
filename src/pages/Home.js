@@ -40,24 +40,19 @@ function Home() {
 
   const kiwango = (viwango[kwenda] / viwango[kutoka]).toFixed(2);
 
-
   return (
     React.createElement('div', {style: styles.ukurasa, className: 'ukurasa-wrapper'},
-      
 
-      React.createElement('div', {style: styles.navbar},
-
-React.createElement('div', {style: styles.navbar},
       React.createElement('div', {style: styles.navbar},
         React.createElement('img', {src: '/logo.png', alt: 'SendEasly', style: styles.navLogo}),
         React.createElement('div', {style: styles.navKulia},
           React.createElement('select', {style: styles.lughaKitufe},
-          React.createElement('option', {value: 'en'}, 'EN - English'),
-          React.createElement('option', {value: 'de'}, 'DE - Deutsch'),
-          React.createElement('option', {value: 'fr'}, 'FR - Francais'),
-          React.createElement('option', {value: 'nl'}, 'NL - Dutch')
-        ),
-          React.createElement('button', {style: styles.hamburger, onClick: () => setMenuWazi(!menuWazi)}, '☰')
+            React.createElement('option', {value: 'en'}, 'EN - English'),
+            React.createElement('option', {value: 'de'}, 'DE - Deutsch'),
+            React.createElement('option', {value: 'fr'}, 'FR - Francais'),
+            React.createElement('option', {value: 'nl'}, 'NL - Dutch')
+          ),
+          React.createElement('button', {style: styles.hamburger, onClick: () => setMenuWazi(!menuWazi)}, '\u2630')
         )
       ),
 
@@ -78,35 +73,32 @@ React.createElement('div', {style: styles.navbar},
 
           React.createElement('p', {style: styles.lebo}, 'You send'),
           React.createElement('div', {style: styles.inputSafu},
-            React.createElement('select', {style: styles.sarafuChaguo, value: kutoka, onChange: (e) => setKutoka(e.target.value)},
-              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, `${bendera[s]} ${s}`))
+            React.createElement('select', {style: styles.sarafuChaguo, value: kutoka, onChange: function(e){ setKutoka(e.target.value); }},
+              Object.keys(viwango).map(function(s){ return React.createElement('option', {key: s, value: s}, bendera[s] + ' ' + s); })
             ),
-            React.createElement('input', {style: styles.nambariIngizo, type: 'number', value: kiasi, onChange: (e) => setKiasi(e.target.value)})
+            React.createElement('input', {style: styles.nambariIngizo, type: 'number', value: kiasi, onChange: function(e){ setKiasi(e.target.value); }})
           ),
 
           React.createElement('div', {style: styles.kiwangoSafu},
-            React.createElement('span', {style: styles.kiwangoManeno}, `1 ${kutoka} = ${kiwango} ${kwenda}`)
+            React.createElement('span', {style: styles.kiwangoManeno}, '1 ' + kutoka + ' = ' + kiwango + ' ' + kwenda)
           ),
 
           React.createElement('p', {style: styles.lebo}, 'They receive'),
           React.createElement('div', {style: styles.inputSafu},
-            React.createElement('select', {style: styles.sarafuChaguo, value: kwenda, onChange: (e) => setKwenda(e.target.value)},
-              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, `${bendera[s]} ${s}`))
+            React.createElement('select', {style: styles.sarafuChaguo, value: kwenda, onChange: function(e){ setKwenda(e.target.value); }},
+              Object.keys(viwango).map(function(s){ return React.createElement('option', {key: s, value: s}, bendera[s] + ' ' + s); })
             ),
-            React.createElement('input', {style: {...styles.nambariIngizo, color: '#c2185b', fontWeight: 'bold'}, type: 'text', value: hesabu(), readOnly: true})
+            React.createElement('input', {style: Object.assign({}, styles.nambariIngizo, {color: '#c2185b', fontWeight: 'bold'}), type: 'text', value: hesabu(), readOnly: true})
           ),
 
-          React.createElement('a', {href: APK, style: styles.sendKitufe, target: '_blank', rel: 'noreferrer'}, 'Download SendEasly'),
-          
+          React.createElement('a', {href: APK, style: styles.sendKitufe, target: '_blank', rel: 'noreferrer'}, 'Download SendEasly')
 
         ),
 
         React.createElement('div', {style: styles.storeVitufe},
           React.createElement('a', {href: APK, style: styles.storeKitufe, target: '_blank', rel: 'noreferrer'}, 'App Store'),
-          React.createElement('a', {href: APK, style: {...styles.storeKitufe, backgroundColor: '#c2185b', color: 'white'}, target: '_blank', rel: 'noreferrer'}, 'Google Play')
-        ),
-
-        
+          React.createElement('a', {href: APK, style: Object.assign({}, styles.storeKitufe, {backgroundColor: '#c2185b', color: 'white'}), target: '_blank', rel: 'noreferrer'}, 'Google Play')
+        )
 
       )
     )
@@ -271,16 +263,11 @@ const styles = {
     textAlign: 'center',
     marginBottom: '12px',
   },
-  adaNdogo: {
-    color: 'rgba(255,255,255,0.7)',
-    fontSize: '12px',
-    textAlign: 'center',
-  },
   storeVitufe: {
     display: 'flex',
     gap: '12px',
     marginBottom: '32px',
-    width: '100%',
+    width: '85%',
   },
   storeKitufe: {
     flex: 1,
@@ -295,17 +282,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-  },
-  mediaLogos: {
-    display: 'flex',
-    gap: '20px',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-  mediaLogo: {
-    color: 'rgba(255,255,255,0.6)',
-    fontSize: '14px',
-    fontWeight: 'bold',
   },
 };
 
