@@ -25,6 +25,7 @@ function Home() {
   }
 
   const kiwango = (viwango[kwenda] / viwango[kutoka]).toFixed(4);
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <div style={styles.ukurasa}>
@@ -32,16 +33,12 @@ function Home() {
       {/* Navbar */}
       <div style={styles.navbar}>
         <img src="/logo.png" alt="SendEasly" style={styles.navLogo} />
-        
-        {/* Hamburger Menu - Mobile */}
-        <button 
+        <button
           style={styles.hamburger}
           onClick={() => setMenuWazi(!menuWazi)}
         >
           ☰
         </button>
-
-        {/* Desktop Links */}
         <div style={styles.navLinks}>
           <a href="/join" style={styles.navLink}>Join our team</a>
           <a href="/faqs" style={styles.navLink}>FAQs</a>
@@ -64,35 +61,55 @@ function Home() {
       )}
 
       {/* Hero Section */}
-      <div style={styles.hero}>
+      <div style={{
+        ...styles.hero,
+        flexDirection: isMobile ? 'column' : 'row',
+        padding: isMobile ? '100px 20px 40px' : '140px 60px 60px',
+      }}>
 
         {/* Maandishi */}
-        <div style={styles.maandishi}>
-          <h1 style={styles.kichwa}>Send easly,<br />spend less.</h1>
+        <div style={{
+          ...styles.maandishi,
+          maxWidth: isMobile ? '100%' : '500px',
+          textAlign: isMobile ? 'center' : 'left',
+        }}>
+          <h1 style={{
+            ...styles.kichwa,
+            fontSize: isMobile ? '36px' : '52px',
+          }}>
+            Send easly,<br />spend less.
+          </h1>
           <p style={styles.maelezo}>
             Send money from the UK, EU, US, UAE, Canada and
             Australia to Africa at a great rate.
           </p>
-          <div style={styles.storeVitufe}>
-            <a href="/download" style={styles.storeKitufe}>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Google Play"
-                style={styles.storeImg}
-              />
-            </a>
-            <a href="/download" style={styles.storeKitufe}>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                alt="App Store"
-                style={styles.storeImg}
-              />
-            </a>
-          </div>
+
+          {/* Store buttons - Desktop only */}
+          {!isMobile && (
+            <div style={styles.storeVitufe}>
+              <a href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15" target="_blank" rel="noreferrer">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  style={styles.storeImg}
+                />
+              </a>
+              <a href="/download" target="_blank" rel="noreferrer">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                  alt="App Store"
+                  style={styles.storeImg}
+                />
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Calculator */}
-        <div style={styles.calculator}>
+        <div style={{
+          ...styles.calculator,
+          width: isMobile ? '100%' : '400px',
+        }}>
           <div style={styles.safu}>
             <div style={styles.nusu}>
               <label style={styles.lebo}>You send</label>
@@ -141,15 +158,43 @@ function Home() {
             Today's rate: 1 {kutoka} = {kiwango} {kwenda}
           </p>
 
-          <a href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15" style={styles.sendKitufe} target="_blank" rel="noreferrer">
-  Get Started →
-</a>
+          
+            href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15"
+            style={styles.sendKitufe}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get Started →
+          </a>
+
+          {/* Store buttons - Mobile only - chini ya calculator */}
+          {isMobile && (
+            <div style={{...styles.storeVitufe, marginTop: '16px', justifyContent: 'center'}}>
+              <a href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15" target="_blank" rel="noreferrer">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  style={styles.storeImg}
+                />
+              </a>
+              <a href="/download" target="_blank" rel="noreferrer">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                  alt="App Store"
+                  style={styles.storeImg}
+                />
+              </a>
+            </div>
+          )}
         </div>
 
       </div>
 
       {/* Takwimu */}
-      <div style={styles.takwimu}>
+      <div style={{
+        ...styles.takwimu,
+        gap: isMobile ? '20px' : '60px',
+      }}>
         <div style={styles.takwimuMoja}>
           <h2 style={styles.nambari}>150+</h2>
           <p style={styles.maelezoTakwimu}>Countries</p>
@@ -171,8 +216,6 @@ function Home() {
     </div>
   );
 }
-
-const isMobile = window.innerWidth <= 768;
 
 const styles = {
   ukurasa: {
@@ -196,7 +239,7 @@ const styles = {
     height: '80px',
   },
   hamburger: {
-    display: isMobile ? 'block' : 'none',
+    display: 'block',
     backgroundColor: 'transparent',
     border: 'none',
     fontSize: '28px',
@@ -204,7 +247,7 @@ const styles = {
     color: '#c2185b',
   },
   navLinks: {
-    display: isMobile ? 'none' : 'flex',
+    display: 'none',
     alignItems: 'center',
     gap: '20px',
   },
@@ -216,7 +259,7 @@ const styles = {
   },
   mobileMenu: {
     position: 'fixed',
-    top: '64px',
+    top: '104px',
     right: 0,
     width: '50%',
     height: '100vh',
@@ -239,21 +282,16 @@ const styles = {
   },
   hero: {
     display: 'flex',
-    flexDirection: isMobile ? 'column' : 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: isMobile ? '100px 20px 40px' : '140px 60px 60px',
     gap: '40px',
     maxWidth: '1200px',
     margin: '0 auto',
   },
   maandishi: {
     flex: 1,
-    maxWidth: isMobile ? '100%' : '500px',
-    textAlign: isMobile ? 'center' : 'left',
   },
   kichwa: {
-    fontSize: isMobile ? '36px' : '52px',
     fontWeight: 'bold',
     color: '#c2185b',
     marginBottom: '20px',
@@ -268,12 +306,7 @@ const styles = {
   storeVitufe: {
     display: 'flex',
     gap: '16px',
-    marginBottom: '24px',
-    justifyContent: isMobile ? 'center' : 'flex-start',
     flexWrap: 'wrap',
-  },
-  storeKitufe: {
-    display: 'inline-block',
   },
   storeImg: {
     height: '44px',
@@ -282,7 +315,6 @@ const styles = {
     backgroundColor: 'white',
     borderRadius: '16px',
     padding: '24px',
-    width: isMobile ? '100%' : '400px',
     boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
   },
   safu: {
@@ -333,11 +365,11 @@ const styles = {
     fontWeight: 'bold',
     display: 'block',
     textAlign: 'center',
+    marginBottom: '8px',
   },
   takwimu: {
     display: 'flex',
     justifyContent: 'center',
-    gap: isMobile ? '20px' : '60px',
     padding: '40px 20px',
     borderTop: '1px solid rgba(0,0,0,0.1)',
     maxWidth: '1200px',
