@@ -43,6 +43,7 @@ function Home() {
   return (
     React.createElement('div', {style: styles.ukurasa, className: 'ukurasa-wrapper'},
 
+      
       React.createElement('div', {style: styles.navbar},
         React.createElement('img', {src: '/logo.png', alt: 'SendEasly', style: styles.navLogo}),
         React.createElement('div', {style: styles.navKulia},

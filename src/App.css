@@ -100,3 +100,42 @@ body {
   line-height: 80px;
   animation: float1 8s ease-in-out infinite;
 }
+@keyframes bubble1 {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+}
+
+@keyframes bubble2 {
+  0% { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100px) scale(1) rotate(360deg); opacity: 0; }
+}
+
+@keyframes bubble3 {
+  0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+  10% { opacity: 0.7; }
+  50% { transform: translateY(50vh) translateX(30px) scale(1); }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100px) translateX(-20px) scale(1.1); opacity: 0; }
+}
+
+.rose-bubble {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  font-size: 28px;
+}
+
+.rb1 { left: 5%; animation: bubble1 8s ease-in infinite; animation-delay: 0s; }
+.rb2 { left: 15%; animation: bubble2 10s ease-in infinite; animation-delay: 1s; }
+.rb3 { left: 25%; animation: bubble3 7s ease-in infinite; animation-delay: 2s; }
+.rb4 { left: 35%; animation: bubble1 9s ease-in infinite; animation-delay: 0.5s; }
+.rb5 { left: 45%; animation: bubble2 11s ease-in infinite; animation-delay: 3s; }
+.rb6 { left: 55%; animation: bubble3 8s ease-in infinite; animation-delay: 1.5s; }
+.rb7 { left: 65%; animation: bubble1 10s ease-in infinite; animation-delay: 4s; }
+.rb8 { left: 75%; animation: bubble2 7s ease-in infinite; animation-delay: 2.5s; }
+.rb9 { left: 85%; animation: bubble3 9s ease-in infinite; animation-delay: 0.8s; }
+.rb10 { left: 92%; animation: bubble1 11s ease-in infinite; animation-delay: 3.5s; }
