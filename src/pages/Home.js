@@ -28,9 +28,6 @@ function Home() {
 
   const kiwango = (viwango[kwenda] / viwango[kutoka]).toFixed(2);
 
-  const Link = ({href, style, children}) => (
-    React.createElement('a', {href, style, target:'_blank', rel:'noreferrer'}, children)
-  );
 
   return (
     React.createElement('div', {style: styles.ukurasa},
