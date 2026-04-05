@@ -12,6 +12,8 @@ const viwango = {
   AED: 3.67,
 };
 
+const APK = "https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15";
+
 function Home() {
   const [kiasi, setKiasi] = useState('1000');
   const [kutoka, setKutoka] = useState('EUR');
@@ -26,134 +28,75 @@ function Home() {
 
   const kiwango = (viwango[kwenda] / viwango[kutoka]).toFixed(2);
 
+  const Link = ({href, style, children}) => (
+    React.createElement('a', {href, style, target:'_blank', rel:'noreferrer'}, children)
+  );
+
   return (
-    <div style={styles.ukurasa}>
+    React.createElement('div', {style: styles.ukurasa},
 
-      {/* Navbar */}
-      <div style={styles.navbar}>
-        <img src="/logo.png" alt="SendEasly" style={styles.navLogo} />
-        <div style={styles.navKulia}>
-          <button style={styles.lughaKitufe}>🌐 EN ▾</button>
-          <button
-            style={styles.hamburger}
-            onClick={() => setMenuWazi(!menuWazi)}
-          >
-            ☰
-          </button>
-        </div>
-      </div>
+      React.createElement('div', {style: styles.navbar},
+        React.createElement('img', {src: '/logo.png', alt: 'SendEasly', style: styles.navLogo}),
+        React.createElement('div', {style: styles.navKulia},
+          React.createElement('button', {style: styles.lughaKitufe}, 'EN'),
+          React.createElement('button', {style: styles.hamburger, onClick: () => setMenuWazi(!menuWazi)}, '☰')
+        )
+      ),
 
-      {/* Mobile Menu */}
-      {menuWazi && (
-        <div style={styles.mobileMenu}>
-          <a href="/about" style={styles.mobileMenuLink}>About us</a>
-          <a href="/faqs" style={styles.mobileMenuLink}>FAQs</a>
-          <a href="/security" style={styles.mobileMenuLink}>Security</a>
-          <a href="/contact" style={styles.mobileMenuLink}>Contact us</a>
-          <a href="/language" style={styles.mobileMenuLink}>Language</a>
-        </div>
-      )}
+      menuWazi && React.createElement('div', {style: styles.mobileMenu},
+        React.createElement('a', {href:'/about', style: styles.mobileMenuLink}, 'About us'),
+        React.createElement('a', {href:'/faqs', style: styles.mobileMenuLink}, 'FAQs'),
+        React.createElement('a', {href:'/security', style: styles.mobileMenuLink}, 'Security'),
+        React.createElement('a', {href:'/contact', style: styles.mobileMenuLink}, 'Contact us'),
+        React.createElement('a', {href:'/language', style: styles.mobileMenuLink}, 'Language')
+      ),
 
-      {/* Hero */}
-      <div style={styles.hero}>
-        <h1 style={styles.kichwa}>Send Money Home 💗</h1>
-        <p style={styles.maelezo}>
-          Join 1,000,000+ customers sending money globally.
-        </p>
+      React.createElement('div', {style: styles.hero},
 
-        {/* Calculator */}
-        <div style={styles.calculator}>
+        React.createElement('h1', {style: styles.kichwa}, 'Send Money Home'),
+        React.createElement('p', {style: styles.maelezo}, 'Join 1,000,000+ customers sending money globally.'),
 
-          {/* You send */}
-          <p style={styles.lebo}>You send</p>
-          <div style={styles.inputSafu}>
-            <select
-              style={styles.sarafuChaguo}
-              value={kutoka}
-              onChange={(e) => setKutoka(e.target.value)}
-            >
-              {Object.keys(viwango).map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-            <input
-              style={styles.nambariIngizo}
-              type="number"
-              value={kiasi}
-              onChange={(e) => setKiasi(e.target.value)}
-            />
-          </div>
+        React.createElement('div', {style: styles.calculator},
 
-          {/* Exchange rate */}
-          <div style={styles.kiwangoSafu}>
-            <span style={styles.kiwangoManeno}>↕ 1 {kutoka} ≈ {kiwango} {kwenda}</span>
-          </div>
+          React.createElement('p', {style: styles.lebo}, 'You send'),
+          React.createElement('div', {style: styles.inputSafu},
+            React.createElement('select', {style: styles.sarafuChaguo, value: kutoka, onChange: (e) => setKutoka(e.target.value)},
+              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, s))
+            ),
+            React.createElement('input', {style: styles.nambariIngizo, type: 'number', value: kiasi, onChange: (e) => setKiasi(e.target.value)})
+          ),
 
-          {/* They receive */}
-          <p style={styles.lebo}>They receive</p>
-          <div style={styles.inputSafu}>
-            <select
-              style={styles.sarafuChaguo}
-              value={kwenda}
-              onChange={(e) => setKwenda(e.target.value)}
-            >
-              {Object.keys(viwango).map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-            <input
-              style={{...styles.nambariIngizo, color: '#c2185b', fontWeight: 'bold'}}
-              type="text"
-              value={hesabu()}
-              readOnly
-            />
-          </div>
+          React.createElement('div', {style: styles.kiwangoSafu},
+            React.createElement('span', {style: styles.kiwangoManeno}, `1 ${kutoka} = ${kiwango} ${kwenda}`)
+          ),
 
-          {/* Get Started Button */}
-          
-            href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15"
-            style={styles.sendKitufe}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Download SendEasly 💗
-          </a>
+          React.createElement('p', {style: styles.lebo}, 'They receive'),
+          React.createElement('div', {style: styles.inputSafu},
+            React.createElement('select', {style: styles.sarafuChaguo, value: kwenda, onChange: (e) => setKwenda(e.target.value)},
+              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, s))
+            ),
+            React.createElement('input', {style: {...styles.nambariIngizo, color: '#c2185b', fontWeight: 'bold'}, type: 'text', value: hesabu(), readOnly: true})
+          ),
 
-          <p style={styles.adaNdogo}>We charge 2% fee on all transfers.</p>
+          React.createElement('a', {href: APK, style: styles.sendKitufe, target: '_blank', rel: 'noreferrer'}, 'Download SendEasly'),
+          React.createElement('p', {style: styles.adaNdogo}, 'We charge 2% fee on all transfers.')
 
-        </div>
+        ),
 
-        {/* Store Buttons */}
-        <div style={styles.storeVitufe}>
-          
-            href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15"
-            style={styles.storeKitufe}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span style={styles.storeIcon}>🍎</span> App Store
-          </a>
-          
-            href="https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15"
-            style={{...styles.storeKitufe, backgroundColor: '#c2185b', color: 'white'}}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span style={styles.storeIcon}>▶</span> Google Play
-          </a>
-        </div>
+        React.createElement('div', {style: styles.storeVitufe},
+          React.createElement('a', {href: APK, style: styles.storeKitufe, target: '_blank', rel: 'noreferrer'}, 'App Store'),
+          React.createElement('a', {href: APK, style: {...styles.storeKitufe, backgroundColor: '#c2185b', color: 'white'}, target: '_blank', rel: 'noreferrer'}, 'Google Play')
+        ),
 
-        {/* Media Logos */}
-        <div style={styles.mediaLogos}>
-          <span style={styles.mediaLogo}>TechCrunch</span>
-          <span style={styles.mediaLogo}>CNN</span>
-          <span style={styles.mediaLogo}>Forbes</span>
-          <span style={styles.mediaLogo}>BBC</span>
-        </div>
+        React.createElement('div', {style: styles.mediaLogos},
+          React.createElement('span', {style: styles.mediaLogo}, 'TechCrunch'),
+          React.createElement('span', {style: styles.mediaLogo}, 'CNN'),
+          React.createElement('span', {style: styles.mediaLogo}, 'Forbes'),
+          React.createElement('span', {style: styles.mediaLogo}, 'BBC')
+        )
 
-      </div>
-
-    </div>
+      )
+    )
   );
 }
 
@@ -248,7 +191,6 @@ const styles = {
   },
   calculator: {
     backgroundColor: 'rgba(255,255,255,0.15)',
-    backdropFilter: 'blur(10px)',
     borderRadius: '20px',
     padding: '24px',
     width: '100%',
@@ -286,6 +228,7 @@ const styles = {
     fontSize: '22px',
     fontWeight: 'bold',
     textAlign: 'right',
+    width: '100%',
   },
   kiwangoSafu: {
     display: 'flex',
@@ -336,9 +279,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-  },
-  storeIcon: {
-    fontSize: '18px',
   },
   mediaLogos: {
     display: 'flex',
