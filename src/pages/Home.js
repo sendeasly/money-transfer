@@ -42,8 +42,12 @@ function Home() {
 
 
   return (
-    React.createElement('div', {style: styles.ukurasa},
+    React.createElement('div', {style: styles.ukurasa, className: 'ukurasa-wrapper'},
+      
 
+      React.createElement('div', {style: styles.navbar},
+
+React.createElement('div', {style: styles.navbar},
       React.createElement('div', {style: styles.navbar},
         React.createElement('img', {src: '/logo.png', alt: 'SendEasly', style: styles.navLogo}),
         React.createElement('div', {style: styles.navKulia},
@@ -114,6 +118,8 @@ const styles = {
     minHeight: '100vh',
     background: 'linear-gradient(135deg, #880e4f 0%, #c2185b 50%, #f48fb1 100%)',
     fontFamily: 'sans-serif',
+    position: 'relative',
+    overflow: 'hidden',
   },
   navbar: {
     position: 'fixed',
