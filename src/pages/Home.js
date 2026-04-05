@@ -31,7 +31,7 @@ function Home() {
       {/* Navbar */}
       <div style={styles.navbar}>
         <img src="/logo.png" alt="SendEasly" style={styles.navLogo} />
-        <div style={styles.navLinks}>
+        <div style={styles.navLinks} className="navbar-links">
           <a href="/join" style={styles.navLink}>Join our team</a>
           <a href="/faqs" style={styles.navLink}>FAQs</a>
           <a href="/security" style={styles.navLink}>Security</a>
@@ -42,10 +42,10 @@ function Home() {
       </div>
 
       {/* Hero Section */}
-      <div style={styles.hero}>
+      <div style={styles.hero} className="hero">
 
         {/* Upande wa Kushoto */}
-        <div style={styles.kushoto}>
+        <div style={styles.kushoto} className="kushoto">
           <h1 style={styles.kichwa}>Send more,<br />spend less.</h1>
           <p style={styles.maelezo}>
             Send money from the UK, EU, US, UAE, Canada and
@@ -75,7 +75,7 @@ function Home() {
         </div>
 
         {/* Upande wa Kulia — Calculator */}
-        <div style={styles.calculator}>
+        <div style={styles.calculator} className="calculator">
           <div style={styles.safu}>
             <div style={styles.nusu}>
               <label style={styles.lebo}>You send</label>
@@ -133,7 +133,7 @@ function Home() {
       </div>
 
       {/* Takwimu */}
-      <div style={styles.takwimu}>
+      <div style={styles.takwimu} className="takwimu">
         <div style={styles.takwimuMoja}>
           <h2 style={styles.nambari}>150+</h2>
           <p style={styles.maelezoTakwimu}>Countries</p>
