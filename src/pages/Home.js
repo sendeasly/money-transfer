@@ -53,7 +53,7 @@ function Home() {
 
       React.createElement('div', {style: styles.hero},
 
-        React.createElement('h1', {style: styles.kichwa}, 'Send Money Home'),
+        React.createElement('h1', {style: styles.kichwa}, 'Send Easly, Spend Less.'),
         React.createElement('p', {style: styles.maelezo}, 'Join 1,000,000+ customers sending money globally.'),
 
         React.createElement('div', {style: styles.calculator},
@@ -175,12 +175,13 @@ const styles = {
     margin: '0 auto',
   },
   kichwa: {
-    fontSize: '36px',
+    fontSize: '24px',
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
     marginBottom: '12px',
     lineHeight: '1.2',
+    whiteSpace: 'nowrap',
   },
   maelezo: {
     fontSize: '16px',
