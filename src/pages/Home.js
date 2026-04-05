@@ -38,7 +38,6 @@ function Home() {
           <a href="/contact" style={styles.navLink}>Contact us</a>
           <a href="/about" style={styles.navLink}>About us</a>
           <a href="/language" style={styles.navLink}>Language</a>
-          <a href="/login" style={styles.navKitufe}>Login</a>
         </div>
       </div>
 
@@ -160,7 +159,7 @@ function Home() {
 const styles = {
   ukurasa: {
     minHeight: '100vh',
-    backgroundColor: '#90EE90',
+    backgroundColor: '#f48fb1',
     fontFamily: 'sans-serif',
   },
   navbar: {
@@ -168,7 +167,7 @@ const styles = {
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#90EE90',
+    backgroundColor: '#f48fb1',
     padding: '16px 40px',
     display: 'flex',
     alignItems: 'center',
@@ -184,13 +183,13 @@ const styles = {
     gap: '24px',
   },
   navLink: {
-    color: '#1a5c1a',
+    color: '#c2185b',
     textDecoration: 'none',
     fontSize: '15px',
     fontWeight: '500',
   },
   navKitufe: {
-    backgroundColor: '#1a5c1a',
+    backgroundColor: '#c2185b',
     color: 'white',
     padding: '8px 20px',
     borderRadius: '8px',
@@ -214,13 +213,13 @@ const styles = {
   kichwa: {
     fontSize: '52px',
     fontWeight: 'bold',
-    color: '#1a5c1a',
+    color: '#c2185b',
     marginBottom: '20px',
     lineHeight: '1.2',
   },
   maelezo: {
     fontSize: '16px',
-    color: '#2d7a2d',
+    color: '#e91e8c',
     lineHeight: '1.7',
     marginBottom: '30px',
   },
@@ -236,7 +235,7 @@ const styles = {
     height: '44px',
   },
   trustpilot: {
-    color: '#1a5c1a',
+    color: '#c2185b',
     fontSize: '14px',
   },
   calculator: {
@@ -279,19 +278,19 @@ const styles = {
     boxSizing: 'border-box',
   },
   kiwango: {
-    color: '#1a5c1a',
+    color: '#c2185b',
     fontSize: '14px',
     fontWeight: '600',
     marginBottom: '4px',
   },
   adaManeno: {
-    color: '#1a5c1a',
+    color: '#c2185b',
     fontSize: '14px',
     marginBottom: '20px',
   },
   sendKitufe: {
-    backgroundColor: '#90EE90',
-    color: '#1a5c1a',
+    backgroundColor: '#f48fb1',
+    color: '#c2185b',
     padding: '14px',
     borderRadius: '30px',
     textDecoration: 'none',
@@ -313,13 +312,13 @@ const styles = {
     textAlign: 'center',
   },
   nambari: {
-    color: '#1a5c1a',
+    color: '#c2185b',
     fontSize: '32px',
     margin: '0',
     fontWeight: 'bold',
   },
   maelezoTakwimu: {
-    color: '#2d7a2d',
+    color: '#e91e8c',
     fontSize: '14px',
     margin: '4px 0 0',
   },
