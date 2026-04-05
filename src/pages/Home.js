@@ -195,7 +195,7 @@ const styles = {
     zIndex: 1000,
   },
   navLogo: {
-    height: '100px',
+    height: '80px',
   },
   hamburger: {
     display: isMobile ? 'block' : 'none',
