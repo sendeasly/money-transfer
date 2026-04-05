@@ -12,6 +12,18 @@ const viwango = {
   AED: 3.67,
 };
 
+const bendera = {
+  USD: '🇺🇸',
+  EUR: '🇪🇺',
+  GBP: '🇬🇧',
+  TZS: '🇹🇿',
+  KES: '🇰🇪',
+  UGX: '🇺🇬',
+  ZAR: '🇿🇦',
+  CAD: '🇨🇦',
+  AED: '🇦🇪',
+};
+
 const APK = "https://expo.dev/accounts/brown94/projects/sendeasly-app/builds/16ce1eb2-3a0d-4ec5-a4f6-235305a6ac15";
 
 function Home() {
@@ -35,7 +47,12 @@ function Home() {
       React.createElement('div', {style: styles.navbar},
         React.createElement('img', {src: '/logo.png', alt: 'SendEasly', style: styles.navLogo}),
         React.createElement('div', {style: styles.navKulia},
-          React.createElement('button', {style: styles.lughaKitufe}, 'EN'),
+          React.createElement('select', {style: styles.lughaKitufe},
+          React.createElement('option', {value: 'en'}, 'EN - English'),
+          React.createElement('option', {value: 'de'}, 'DE - Deutsch'),
+          React.createElement('option', {value: 'fr'}, 'FR - Francais'),
+          React.createElement('option', {value: 'nl'}, 'NL - Dutch')
+        ),
           React.createElement('button', {style: styles.hamburger, onClick: () => setMenuWazi(!menuWazi)}, '☰')
         )
       ),
@@ -58,7 +75,7 @@ function Home() {
           React.createElement('p', {style: styles.lebo}, 'You send'),
           React.createElement('div', {style: styles.inputSafu},
             React.createElement('select', {style: styles.sarafuChaguo, value: kutoka, onChange: (e) => setKutoka(e.target.value)},
-              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, s))
+              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, `${bendera[s]} ${s}`))
             ),
             React.createElement('input', {style: styles.nambariIngizo, type: 'number', value: kiasi, onChange: (e) => setKiasi(e.target.value)})
           ),
@@ -70,13 +87,13 @@ function Home() {
           React.createElement('p', {style: styles.lebo}, 'They receive'),
           React.createElement('div', {style: styles.inputSafu},
             React.createElement('select', {style: styles.sarafuChaguo, value: kwenda, onChange: (e) => setKwenda(e.target.value)},
-              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, s))
+              Object.keys(viwango).map((s) => React.createElement('option', {key: s, value: s}, `${bendera[s]} ${s}`))
             ),
             React.createElement('input', {style: {...styles.nambariIngizo, color: '#c2185b', fontWeight: 'bold'}, type: 'text', value: hesabu(), readOnly: true})
           ),
 
           React.createElement('a', {href: APK, style: styles.sendKitufe, target: '_blank', rel: 'noreferrer'}, 'Download SendEasly'),
-          React.createElement('p', {style: styles.adaNdogo}, 'We charge 2% fee on all transfers.')
+          
 
         ),
 
@@ -85,12 +102,7 @@ function Home() {
           React.createElement('a', {href: APK, style: {...styles.storeKitufe, backgroundColor: '#c2185b', color: 'white'}, target: '_blank', rel: 'noreferrer'}, 'Google Play')
         ),
 
-        React.createElement('div', {style: styles.mediaLogos},
-          React.createElement('span', {style: styles.mediaLogo}, 'TechCrunch'),
-          React.createElement('span', {style: styles.mediaLogo}, 'CNN'),
-          React.createElement('span', {style: styles.mediaLogo}, 'Forbes'),
-          React.createElement('span', {style: styles.mediaLogo}, 'BBC')
-        )
+        
 
       )
     )
