@@ -203,7 +203,7 @@ const styles = {
     backgroundColor: 'rgba(255,255,255,0.15)',
     borderRadius: '20px',
     padding: '24px',
-    width: '100%',
+    width: '85%',
     marginBottom: '24px',
     border: '1px solid rgba(255,255,255,0.2)',
   },
