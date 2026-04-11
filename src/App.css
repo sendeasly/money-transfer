@@ -139,3 +139,6 @@ body {
 .rb8 { left: 75%; animation: bubble2 7s ease-in infinite; animation-delay: 2.5s; }
 .rb9 { left: 85%; animation: bubble3 9s ease-in infinite; animation-delay: 0.8s; }
 .rb10 { left: 92%; animation: bubble1 11s ease-in infinite; animation-delay: 3.5s; }
+@media (max-width: 768px) {
+  .navbar-links { display: none !important; }
+}
