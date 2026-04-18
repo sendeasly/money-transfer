@@ -75,9 +75,9 @@ function Home() {
 
         // Text juu
         React.createElement('div', { style: styles.heroText },
-          React.createElement('h1', { style: styles.kichwa }, 'Send Money Home'),
+          React.createElement('h1', { style: styles.kichwa }, 'Send Money Easly'),
           React.createElement('p', { style: styles.maelezo },
-            'Join 1,000,000+ customers sending money globally.'
+            'Join 5,000,000+ customers sending money internationally.'
           )
         ),
 
