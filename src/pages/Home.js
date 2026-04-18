@@ -36,7 +36,16 @@ function Home() {
 
       React.createElement('div', { style: styles.starsBackground }),
 
-      // Navbar
+      React.createElement('style', null, `
+        select option { background-color: #2d0a4e; color: white; }
+        select { background-color: transparent; }
+        input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+        @media (max-width: 600px) {
+          .hero-kichwa { font-size: 28px !important; }
+          .calc-wrapper { padding: 16px !important; }
+        }
+      `),
+
       React.createElement('div', { style: styles.navbar },
         React.createElement('div', { style: styles.navLeft },
           React.createElement('img', { src: '/logo.png', alt: 'SendEasly', style: styles.navLogo })
@@ -62,7 +71,6 @@ function Home() {
         )
       ),
 
-      // Mobile Menu
       menuWazi && React.createElement('div', { style: styles.mobileMenu },
         React.createElement('a', { href: '/about', style: styles.mobileMenuLink }, 'About Us'),
         React.createElement('a', { href: '/faqs', style: styles.mobileMenuLink }, 'FAQs'),
@@ -70,19 +78,16 @@ function Home() {
         React.createElement('a', { href: '/contact', style: styles.mobileMenuLink }, 'Contact us')
       ),
 
-      // Hero Section — Centered
       React.createElement('div', { style: styles.hero },
 
-        // Text juu
         React.createElement('div', { style: styles.heroText },
-          React.createElement('h1', { style: styles.kichwa }, 'Send Money Easly'),
+          React.createElement('h1', { style: styles.kichwa }, 'Send Money Home'),
           React.createElement('p', { style: styles.maelezo },
-            'Join 5,000,000+ customers sending money internationally.'
+            'Join 1,000,000+ customers sending money globally.'
           )
         ),
 
-        // Calculator katikati
-        React.createElement('div', { style: styles.calculatorWrapper },
+        React.createElement('div', { style: styles.calculatorWrapper, className: 'calc-wrapper' },
 
           React.createElement('div', { style: styles.tabs },
             React.createElement('button', {
@@ -98,17 +103,19 @@ function Home() {
           React.createElement('p', { style: styles.lebo }, 'You send'),
           React.createElement('div', { style: styles.inputSafu },
             React.createElement('div', { style: styles.sarafuBox },
-              React.createElement('span', null, viwango[kutoka].bendera),
+              React.createElement('span', { style: styles.bendera }, viwango[kutoka].bendera),
               React.createElement('select', {
                 style: styles.sarafuSelect,
                 value: kutoka,
                 onChange: function(e) { setKutoka(e.target.value); }
               },
                 Object.keys(viwango).map(function(s) {
-                  return React.createElement('option', { key: s, value: s }, s);
+                  return React.createElement('option', {
+                    key: s, value: s,
+                    style: { backgroundColor: '#2d0a4e', color: 'white' }
+                  }, viwango[s].bendera + ' ' + s);
                 })
-              ),
-              React.createElement('span', { style: styles.chevron }, '▾')
+              )
             ),
             React.createElement('input', {
               style: styles.nambariIngizo,
@@ -119,29 +126,30 @@ function Home() {
           ),
 
           React.createElement('div', { style: styles.kiwangoSafu },
-            React.createElement('span', { style: styles.kiwangoIcon }, '↕'),
             React.createElement('span', { style: styles.kiwangoManeno },
-              '1 ' + kutoka + ' \u2248 ' + kiwango + ' ' + kwenda
+              '\u21C5 1 ' + kutoka + ' \u2248 ' + kiwango + ' ' + kwenda
             )
           ),
 
           React.createElement('p', { style: styles.lebo }, 'Individual receives'),
           React.createElement('div', { style: styles.inputSafu },
             React.createElement('div', { style: styles.sarafuBox },
-              React.createElement('span', null, viwango[kwenda].bendera),
+              React.createElement('span', { style: styles.bendera }, viwango[kwenda].bendera),
               React.createElement('select', {
                 style: styles.sarafuSelect,
                 value: kwenda,
                 onChange: function(e) { setKwenda(e.target.value); }
               },
                 Object.keys(viwango).map(function(s) {
-                  return React.createElement('option', { key: s, value: s }, s);
+                  return React.createElement('option', {
+                    key: s, value: s,
+                    style: { backgroundColor: '#2d0a4e', color: 'white' }
+                  }, viwango[s].bendera + ' ' + s);
                 })
-              ),
-              React.createElement('span', { style: styles.chevron }, '▾')
+              )
             ),
             React.createElement('input', {
-              style: Object.assign({}, styles.nambariIngizo, { fontWeight: 'bold' }),
+              style: Object.assign({}, styles.nambariIngizo, { fontWeight: 'bold', color: '#f8bbd0' }),
               type: 'text',
               value: hesabu(),
               readOnly: true
@@ -156,45 +164,38 @@ function Home() {
           }, 'Download SendEasly'),
 
           React.createElement('p', { style: styles.adaNdogo },
-            'We charge only 2% fee on all transfers. No hidden charges.'
+            'Only 2% fee — no hidden charges.'
           )
         ),
 
-        // Store buttons
         React.createElement('div', { style: styles.storeVitufe },
           React.createElement('a', {
             href: APK,
             style: styles.storeKitufe,
             target: '_blank',
             rel: 'noreferrer'
-          }, 'App Store'),
+          }, '\uD83C\uDF4E  App Store'),
           React.createElement('a', {
             href: APK,
             style: Object.assign({}, styles.storeKitufe, { backgroundColor: '#c2185b', color: 'white' }),
             target: '_blank',
             rel: 'noreferrer'
-          }, 'Google Play')
+          }, '\u25B6  Google Play')
         )
       ),
 
-      // Stats
       React.createElement('div', { style: styles.stats },
-        React.createElement('div', { style: styles.statItem },
-          React.createElement('h2', { style: styles.statNambari }, '1M+'),
-          React.createElement('p', { style: styles.statManeno }, 'Customers')
-        ),
-        React.createElement('div', { style: styles.statItem },
-          React.createElement('h2', { style: styles.statNambari }, '150+'),
-          React.createElement('p', { style: styles.statManeno }, 'Countries')
-        ),
-        React.createElement('div', { style: styles.statItem },
-          React.createElement('h2', { style: styles.statNambari }, '2%'),
-          React.createElement('p', { style: styles.statManeno }, 'Fee only')
-        ),
-        React.createElement('div', { style: styles.statItem },
-          React.createElement('h2', { style: styles.statNambari }, '24/7'),
-          React.createElement('p', { style: styles.statManeno }, 'Support')
-        )
+        [
+          { n: '1M+', m: 'Customers' },
+          { n: '150+', m: 'Countries' },
+          { n: '2%', m: 'Fee only' },
+          { n: '24/7', m: 'Support' },
+        ].map(function(s) {
+          return React.createElement('div', { key: s.n, style: styles.statItem },
+            React.createElement('h2', { style: styles.statNambari }, s.n),
+            React.createElement('p', { style: styles.statManeno }, s.m)
+          );
+        })
       )
     )
   );
@@ -211,7 +212,7 @@ const styles = {
   starsBackground: {
     position: 'fixed',
     top: 0, left: 0, right: 0, bottom: 0,
-    backgroundImage: 'radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 300px 30px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 400px 110px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 500px 60px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 600px 40px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 700px 80px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 800px 30px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 900px 60px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 1000px 40px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 1100px 80px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 1200px 50px, rgba(255,255,255,0.3), transparent)',
+    backgroundImage: 'radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent), radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 200px 50px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 350px 110px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 500px 80px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 700px 30px, rgba(255,255,255,0.3), transparent), radial-gradient(2px 2px at 900px 60px, rgba(255,255,255,0.2), transparent), radial-gradient(1px 1px at 1100px 40px, rgba(255,255,255,0.3), transparent)',
     backgroundSize: '1300px 300px',
     zIndex: 0,
     pointerEvents: 'none',
@@ -219,65 +220,56 @@ const styles = {
   navbar: {
     position: 'fixed',
     top: 0, left: 0, right: 0,
-    padding: '14px 40px',
+    padding: '12px 32px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     zIndex: 1000,
-    backgroundColor: 'rgba(26,10,46,0.9)',
+    backgroundColor: 'rgba(26,10,46,0.92)',
     backdropFilter: 'blur(10px)',
     borderBottom: '1px solid rgba(255,255,255,0.1)',
   },
   navLeft: { display: 'flex', alignItems: 'center' },
-  navLogo: { height: '45px' },
-  navLinks: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '28px',
-  },
+  navLogo: { height: '40px' },
+  navLinks: { display: 'flex', alignItems: 'center', gap: '24px' },
   navLink: {
     color: 'rgba(255,255,255,0.85)',
     textDecoration: 'none',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: '500',
   },
-  navRight: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-  },
+  navRight: { display: 'flex', alignItems: 'center', gap: '10px' },
   langKitufe: {
     backgroundColor: 'rgba(255,255,255,0.1)',
     border: '1px solid rgba(255,255,255,0.2)',
     color: 'white',
-    padding: '8px 12px',
+    padding: '6px 10px',
     borderRadius: '20px',
     cursor: 'pointer',
-    fontSize: '14px',
+    fontSize: '13px',
   },
   hamburger: {
     backgroundColor: 'transparent',
     border: 'none',
     color: 'white',
-    fontSize: '24px',
+    fontSize: '22px',
     cursor: 'pointer',
   },
   downloadKitufe: {
     backgroundColor: '#c2185b',
     color: 'white',
-    padding: '10px 20px',
-    borderRadius: '25px',
+    padding: '8px 16px',
+    borderRadius: '20px',
     textDecoration: 'none',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: 'bold',
-    border: '2px solid rgba(255,255,255,0.3)',
   },
   mobileMenu: {
     position: 'fixed',
-    top: '73px', right: 0,
-    width: '60%', height: '100vh',
+    top: '64px', right: 0,
+    width: '55%', height: '100vh',
     backgroundColor: 'rgba(26,10,46,0.97)',
-    padding: '24px',
+    padding: '20px',
     zIndex: 999,
     display: 'flex',
     flexDirection: 'column',
@@ -287,9 +279,9 @@ const styles = {
   mobileMenuLink: {
     color: 'white',
     textDecoration: 'none',
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '500',
-    padding: '12px 0',
+    padding: '10px 0',
     borderBottom: '1px solid rgba(255,255,255,0.1)',
   },
   hero: {
@@ -298,54 +290,55 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '120px 40px 60px',
-    maxWidth: '700px',
+    padding: '100px 20px 40px',
+    maxWidth: '560px',
     margin: '0 auto',
   },
   heroText: {
     textAlign: 'center',
-    marginBottom: '32px',
+    marginBottom: '20px',
   },
   kichwa: {
-    fontSize: '52px',
+    fontSize: '36px',
     fontWeight: 'bold',
     color: 'white',
-    lineHeight: '1.15',
-    marginBottom: '16px',
+    lineHeight: '1.2',
+    marginBottom: '10px',
+    margin: '0 0 10px',
   },
   maelezo: {
-    fontSize: '18px',
-    color: 'rgba(255,255,255,0.75)',
-    lineHeight: '1.7',
+    fontSize: '15px',
+    color: 'rgba(255,255,255,0.7)',
+    lineHeight: '1.6',
+    margin: '0',
   },
   calculatorWrapper: {
     backgroundColor: 'rgba(255,255,255,0.08)',
     backdropFilter: 'blur(20px)',
-    borderRadius: '20px',
-    padding: '24px',
+    borderRadius: '16px',
+    padding: '20px',
     width: '100%',
-    maxWidth: '460px',
     border: '1px solid rgba(255,255,255,0.15)',
-    boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
-    marginBottom: '20px',
+    boxShadow: '0 16px 48px rgba(0,0,0,0.3)',
+    marginBottom: '16px',
   },
   tabs: {
     display: 'flex',
     backgroundColor: 'rgba(255,255,255,0.1)',
-    borderRadius: '10px',
-    padding: '4px',
-    marginBottom: '16px',
-    gap: '4px',
+    borderRadius: '8px',
+    padding: '3px',
+    marginBottom: '14px',
+    gap: '3px',
   },
   tab: {
     flex: 1,
     backgroundColor: 'transparent',
     border: 'none',
     color: 'rgba(255,255,255,0.6)',
-    padding: '8px',
-    borderRadius: '8px',
+    padding: '7px',
+    borderRadius: '6px',
     cursor: 'pointer',
-    fontSize: '13px',
+    fontSize: '12px',
     fontWeight: '500',
   },
   tabAmilifu: {
@@ -353,74 +346,71 @@ const styles = {
     backgroundColor: 'rgba(255,255,255,0.2)',
     border: 'none',
     color: 'white',
-    padding: '8px',
-    borderRadius: '8px',
+    padding: '7px',
+    borderRadius: '6px',
     cursor: 'pointer',
-    fontSize: '13px',
+    fontSize: '12px',
     fontWeight: 'bold',
   },
   lebo: {
-    color: 'rgba(255,255,255,0.8)',
-    fontSize: '13px',
+    color: 'rgba(255,255,255,0.7)',
+    fontSize: '12px',
     fontWeight: '600',
-    marginBottom: '6px',
+    marginBottom: '5px',
     marginTop: '0',
   },
   inputSafu: {
     display: 'flex',
-    gap: '0',
-    marginBottom: '10px',
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    borderRadius: '12px',
+    marginBottom: '8px',
+    backgroundColor: 'rgba(255,255,255,0.12)',
+    borderRadius: '10px',
     border: '1px solid rgba(255,255,255,0.2)',
-    overflow: 'hidden',
+    overflow: 'visible',
   },
   sarafuBox: {
     display: 'flex',
     alignItems: 'center',
-    padding: '12px 10px',
+    padding: '10px 8px',
     backgroundColor: 'rgba(255,255,255,0.1)',
     gap: '4px',
     borderRight: '1px solid rgba(255,255,255,0.2)',
+    borderRadius: '10px 0 0 10px',
   },
+  bendera: { fontSize: '18px' },
   sarafuSelect: {
-    backgroundColor: 'transparent',
-    border: 'none',
+    backgroundColor: '#2d0a4e',
+    border: '1px solid rgba(255,255,255,0.3)',
     color: 'white',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: '600',
     cursor: 'pointer',
     outline: 'none',
-  },
-  chevron: {
-    color: 'rgba(255,255,255,0.6)',
-    fontSize: '11px',
+    borderRadius: '6px',
+    padding: '2px 4px',
   },
   nambariIngizo: {
     flex: 1,
     backgroundColor: 'transparent',
     border: 'none',
     color: 'white',
-    fontSize: '22px',
+    fontSize: '20px',
     fontWeight: 'bold',
     textAlign: 'right',
-    padding: '12px 14px',
+    padding: '10px 12px',
     outline: 'none',
+    borderRadius: '0 10px 10px 0',
   },
   kiwangoSafu: {
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'flex-end',
-    gap: '6px',
-    marginBottom: '10px',
-  },
-  kiwangoIcon: {
-    color: 'rgba(255,255,255,0.6)',
-    fontSize: '14px',
+    marginBottom: '8px',
   },
   kiwangoManeno: {
+    backgroundColor: 'rgba(255,255,255,0.15)',
     color: 'rgba(255,255,255,0.8)',
-    fontSize: '12px',
+    padding: '4px 10px',
+    borderRadius: '20px',
+    fontSize: '11px',
     fontWeight: '600',
   },
   downloadBtn: {
@@ -429,64 +419,54 @@ const styles = {
     color: '#880e4f',
     textDecoration: 'none',
     textAlign: 'center',
-    padding: '14px',
-    borderRadius: '12px',
-    fontSize: '15px',
+    padding: '13px',
+    borderRadius: '10px',
+    fontSize: '14px',
     fontWeight: 'bold',
-    marginTop: '14px',
-    marginBottom: '10px',
+    marginTop: '12px',
+    marginBottom: '8px',
   },
   adaNdogo: {
-    color: 'rgba(255,255,255,0.5)',
+    color: 'rgba(255,255,255,0.45)',
     fontSize: '11px',
     textAlign: 'center',
-    lineHeight: '1.5',
     margin: '0',
   },
   storeVitufe: {
     display: 'flex',
-    gap: '12px',
+    gap: '10px',
     width: '100%',
-    maxWidth: '460px',
-    marginBottom: '40px',
+    marginBottom: '32px',
   },
   storeKitufe: {
     flex: 1,
     backgroundColor: 'white',
     color: '#880e4f',
-    padding: '12px',
-    borderRadius: '12px',
+    padding: '11px',
+    borderRadius: '10px',
     textDecoration: 'none',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: '6px',
   },
   stats: {
     position: 'relative',
     zIndex: 1,
     display: 'flex',
     justifyContent: 'center',
-    gap: '60px',
-    padding: '32px 40px',
+    gap: '48px',
+    padding: '28px 40px',
     borderTop: '1px solid rgba(255,255,255,0.1)',
     maxWidth: '1300px',
     margin: '0 auto',
     flexWrap: 'wrap',
   },
   statItem: { textAlign: 'center' },
-  statNambari: {
-    color: 'white',
-    fontSize: '32px',
-    fontWeight: 'bold',
-    margin: '0',
-  },
-  statManeno: {
-    color: 'rgba(255,255,255,0.6)',
-    fontSize: '13px',
-    margin: '4px 0 0',
-  },
+  statNambari: { color: 'white', fontSize: '28px', fontWeight: 'bold', margin: '0' },
+  statManeno: { color: 'rgba(255,255,255,0.6)', fontSize: '12px', margin: '4px 0 0' },
 };
 
 export default Home;
